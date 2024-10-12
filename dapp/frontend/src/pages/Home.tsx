@@ -94,8 +94,8 @@ const Home: React.FC = () => {
             <div key={token.tokenAddress} className={"leaderboard-wrapper " + className}>
                 {index === 1 && <>
                     <div className="explanation">
-                        <a href="https://x.com/chainHighscore" target="_blank" rel="noreferrer"><strong style={{color:"orange", fontSize:32}}>?</strong>
-                       @chainHighscore</a> publishes <span style={{color:"deeppink"}}>AI</span> generated tweets about deposits on this web<br/><br/>
+                        <a href="https://x.com/coinbaseleaders" target="_blank" rel="noreferrer"><strong style={{color:"orange", fontSize:32}}>?</strong>
+                       @coinbaseleaders</a> publishes <span style={{color:"deeppink"}}>AI</span> generated tweets about deposits on this web<br/><br/>
                         This is an experimental project with leaderboards per tokens where contributors rise based on their <span style={{color:"deeppink"}}>donations ♥︎</span>, displaying custom text, links, and images; then advertised in metaverses and events.
                         Powered by <span style={{color:"turquoise"}}>#ChatGPT #theGraph #Solidity #TwitterSDK</span>
                     </div>
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
 
                         <div className="referrer-promo">
                             <img src="/head_show.gif" />
-                            <br/><br/>To <b>get this #NFT wearable</b> make a <span style={{color:"deeppink"}}>donation ♥︎</span> on any token leaderboard for a value greater than $3.00<br/>
+                            <br/><br/>To <b>get this #NFT wearable</b> make a <span style={{color:"deeppink"}}>donation ♥︎</span> on any coin leaderboard for a value greater than $3.00<br/>
                             <br/>
                             (LIMITED SUPPLY: {wearableSupply||0}/100)</div>
 

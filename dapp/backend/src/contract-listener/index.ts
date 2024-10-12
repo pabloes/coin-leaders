@@ -11,7 +11,7 @@ import {
     parseUnits,
     erc721Abi, createWalletClient
 } from 'viem';
-import {mainnet, polygon, sepolia} from 'viem/chains';
+import {base, baseSepolia, mainnet, polygon, sepolia} from 'viem/chains';
 import {sleepSecs} from "twitter-api-v2/dist/cjs/v1/media-helpers.v1";
 import OpenAI from  "openai";
 import * as fs from "fs";
@@ -59,12 +59,12 @@ export async function initDepositListener(){
 
 // Connect to Ethereum node
 
-    const mainnetUrl = `https://mainnet.infura.io/v3/${process.env.INFURA_PROJECT}`;
+    const mainnetUrl = `https://base-mainnet.infura.io/v3/${process.env.INFURA_PROJECT}`;
     const polygonUrl = `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_PROJECT}`;
-    const infuraUrl = process.env.PROD ? mainnetUrl : `https://sepolia.infura.io/v3/${process.env.INFURA_PROJECT}`;
+    const infuraUrl = process.env.PROD ? mainnetUrl : `https://base-sepolia.infura.io/v3/${process.env.INFURA_PROJECT}`;
 
     const publicClient = createPublicClient({
-        chain: mainnet,
+        chain: base,
         transport: http(mainnetUrl),
     });
 
@@ -79,7 +79,7 @@ export async function initDepositListener(){
         transport: http(polygonUrl),
     } as any);
     const clientInfura = process.env.PROD?publicClient:createPublicClient({
-        chain: sepolia,
+        chain: baseSepolia,
         transport: http(infuraUrl),
     });
     async function getENSName(address) {
