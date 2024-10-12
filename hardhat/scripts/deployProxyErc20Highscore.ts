@@ -31,7 +31,7 @@ async function main() {
         constructorArguments: [],
     });
     console.log("Implementation contract verified successfully!");
-    console.log(`Now verify manually the proxy navigating to\n\n https://etherscan.io/proxycontractchecker?a=${highscoreAddress} \n\nShould mathc implementation on: ${implementationAddress}`)
+    console.log(`Now verify manually the proxy navigating to\n\n https://basescan.io/proxycontractchecker?a=${highscoreAddress} \n\nShould match implementation on: ${implementationAddress}`)
 }
 
 main().catch((error) => {

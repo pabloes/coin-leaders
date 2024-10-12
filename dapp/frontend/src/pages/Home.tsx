@@ -51,6 +51,7 @@ const Home: React.FC = () => {
                 console.log("wearableSupply",wearableSupply)
                 setWearableSupply(result);
             }catch(error){
+                setWearableSupply(0);
                 console.log(error)
             }
         })()

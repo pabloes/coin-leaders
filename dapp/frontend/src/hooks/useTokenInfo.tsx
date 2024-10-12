@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useContractRead, useBalance } from 'wagmi';
+import {useContractRead, useBalance, useChains} from 'wagmi';
 import erc20Abi from '../../../../subgraph/coin-leaders/abis/ERC20.json';
 import { getToken } from '@wagmi/core'
 import {zeroAddress} from "viem";
+import {base} from "wagmi/chains";
 
 interface TokenInfo {
     tokenDecimals: number;
@@ -30,6 +31,7 @@ const useTokenInfo = (tokenAddr: string = ETH_ADDRESS, userAddress:string = ZERO
     const { data: decimalsData, error: decimalsError, isLoading: isDecimalsLoading } = useContractRead({
         address: tokenAddr,
         abi: erc20Abi,
+        chainId: base.id,
         functionName: 'decimals'//0x313ce567
     });
 
@@ -37,19 +39,21 @@ const useTokenInfo = (tokenAddr: string = ETH_ADDRESS, userAddress:string = ZERO
     const { data: nameData, error: nameError, isLoading: isNameLoading } = useContractRead({
         address: tokenAddr,
         abi: erc20Abi,
+        chainId: base.id,
         functionName: 'name'
     });
-
     // Fetch token symbol
     const { data: symbolData, error: symbolError, isLoading: isSymbolLoading } = useContractRead({
         address: tokenAddr,
         abi: erc20Abi,
+        chainId: base.id,
         functionName: 'symbol'
     });
 
     const {data:balanceData, error:balanceError, isLoading: isBalanceLoading, refetch:refetchBalance } = useContractRead({
         address: tokenAddr,
         abi: erc20Abi,
+        chainId: base.id,
         functionName: 'balanceOf',
         args:[userAddress]
     });
@@ -57,6 +61,7 @@ const useTokenInfo = (tokenAddr: string = ETH_ADDRESS, userAddress:string = ZERO
     const {data:allowanceData, error:allowanceError, isLoading: isAllowanceLoading, refetch:refetchAllowance} = useContractRead({
         address: tokenAddr,
         abi: erc20Abi,
+        chainId: base.id,
         functionName: 'allowance',
         args:[userAddress, import.meta.env.DEPLOYED_SEPOLIA_CONTRACT_HIGHSCORE]
     });

@@ -25,7 +25,7 @@ async function main() {
         constructorArguments: [],
     });
     console.log("Implementation contract verified successfully!");
-    console.log(`Now verify manually the proxy navigating to\n\n https://sepolia.etherscan.io/proxycontractchecker?a=${upgradeAddress} \n\nShould mathc implementation on: ${implementationAddress}`)
+    console.log(`Now verify manually the proxy navigating to\n\n https://sepolia.basescan.io/proxycontractchecker?a=${upgradeAddress} \n\nShould mathc implementation on: ${implementationAddress}`)
 
 }
 

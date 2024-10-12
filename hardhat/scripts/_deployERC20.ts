@@ -38,7 +38,7 @@ export async function deployERC20Token({constructorArguments}){
 
  //   await pressAnyKey();
     setTimeout(()=>{
-        console.log(`Now verify manually the proxy navigating to\n\n https://sepolia.etherscan.io/proxycontractchecker?a=${tokenContractAddress} \n\nShould match implementation on: ${implementationAddress}`);
+        console.log(`Now verify manually the proxy navigating to\n\n https://sepolia.basescan.io/proxycontractchecker?a=${tokenContractAddress} \n\nShould match implementation on: ${implementationAddress}`);
     });
     return {
         implementationAddress,

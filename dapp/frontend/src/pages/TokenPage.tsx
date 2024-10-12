@@ -19,7 +19,7 @@ import {
 } from 'wagmi';
 import highscoreAbi from '../../../../subgraph/coin-leaders/abis/MultiTokenHighscore.json';
 import erc20Abi from '../../../../subgraph/coin-leaders/abis/ERC20.json';
-import {mainnet, sepolia} from "wagmi/chains";
+import {base, mainnet, sepolia} from "wagmi/chains";
 import useTokenInfo from "../hooks/useTokenInfo"; // Replace with the correct path to your ERC-20 ABI
 
 import {bigIntMax, formatNumber} from "../util/number";
@@ -79,7 +79,7 @@ const TokenPage: React.FC = () => {
     const invalidChain = chains.find((c) => c.id === chain?.id) === undefined;
     const handleSwitchNetwork = async () => {
         try {
-            await switchChain?.({chainId:1}); // 1 is the chain ID for Ethereum Mainnet
+            await switchChain?.({chainId:base.id}); // 1 is the chain ID for Ethereum Mainnet
             console.log(`Switched to network ${chain}`);
         } catch (error) {
             console.error('Failed to switch network', error);
@@ -112,7 +112,11 @@ console.log("tokenInfo",tokenInfo)
                 const _price = await fetchTokenPrice(leaderboardData.tokenTotal.symbol);
                 setPrice(_price);
                 setLoadingPrice(false);
+            }else if(leaderboardData && !leaderboardData?.tokenTotal?.symbol){
+                setPrice(0);
+                setLoadingPrice(false);
             }
+
         })();
     },[leaderboardData])
     useEffect(() => {
@@ -181,7 +185,11 @@ console.log("tokenInfo",tokenInfo)
     return (
         <div className={`token-page `+ urlClass}>
             <Header />
-
+            {invalidChain && "invalidChain"}
+            <br/>
+            {"chain: "+chain}<br/>
+            {"isConnected: "+isConnected}
+            {"loadingPrice"+loadingPrice}
             {!isScreenshot && <a href="#deposit" className="join-link">Join the leaderboard</a>}
             <div className="content-wrapper">
                     <main className="leaderboard-wrapper">

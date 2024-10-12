@@ -47,7 +47,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({usdPrice = 0, position, title,
                             rel="noopener noreferrer"
                             key={index}
                             style={{ backgroundImage: `url(${entry.image})` }}
-                            href={`https://${entry.url?.replace("https://","")}` || `https://etherscan.io/address/${entry.user.id}`}
+                            href={`https://${entry.url?.replace("https://","")}` || `https://basescan.io/address/${entry.user.id}`}
                             className={`leaderboard-entry ${index < 3 ? 'top-3' : 'other'}`}
                         >
                             <div className="entry-content">
