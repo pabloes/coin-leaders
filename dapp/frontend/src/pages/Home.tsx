@@ -57,6 +57,7 @@ const Home: React.FC = () => {
         })()
     },[]);
     useEffect(() => {
+        console.log("allTokens",allTokens);
         if (allTokens && allTokens.tokenTotals) {
             const fetchPrices = async () => {
                 const tokensWithPrices = await Promise.all(allTokens.tokenTotals.map(async (token: any) => {
