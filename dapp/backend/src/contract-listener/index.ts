@@ -60,9 +60,13 @@ export async function initDepositListener(){
 // Connect to Ethereum node
 
     const mainnetUrl = `https://base-mainnet.infura.io/v3/${process.env.INFURA_PROJECT}`;
+    const ethUrl = `https://mainnet.infura.io/v3/${process.env.INFURA_PROJECT}`;
     const polygonUrl = `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_PROJECT}`;
     const infuraUrl = process.env.PROD ? mainnetUrl : `https://base-sepolia.infura.io/v3/${process.env.INFURA_PROJECT}`;
-
+    const ethClient = createPublicClient({
+        chain: mainnet,
+        transport: http(ethUrl),
+    });
     const publicClient = createPublicClient({
         chain: base,
         transport: http(mainnetUrl),
@@ -84,7 +88,7 @@ export async function initDepositListener(){
     });
     async function getENSName(address) {
         try {
-            return await publicClient.getEnsName({ address });
+            return await ethClient.getEnsName({ address });
         } catch (error) {
             console.error('Error fetching ENS name:', error);
         }
