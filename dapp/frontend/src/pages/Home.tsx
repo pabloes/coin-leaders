@@ -128,7 +128,7 @@ const Home: React.FC = () => {
         <div>
             <Header />
             {(loadingLeaderboards || loading)
-                ? <span><br />&nbsp;&nbsp;&nbsp;Loading...</span>
+                ? <span><br />&nbsp;&nbsp;&nbsp;(v0) Loading...</span>
                 : <>
                     <main className="leaderboards-container">
                         {columns}
