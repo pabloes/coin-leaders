@@ -187,9 +187,6 @@ console.log("tokenInfo",tokenInfo)
             <Header />
             {invalidChain && "invalidChain"}
             <br/>
-            {"chain: "+chain}<br/>
-            {"isConnected: "+isConnected}
-            {"loadingPrice"+loadingPrice}
             {!isScreenshot && <a href="#deposit" className="join-link">Join the leaderboard</a>}
             <div className="content-wrapper">
                     <main className="leaderboard-wrapper">

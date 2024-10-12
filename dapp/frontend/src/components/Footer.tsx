@@ -10,7 +10,7 @@ const Footer: React.FC<{ tokens: any[], loading: boolean }> = ({ tokens, loading
                     <p>Loading tokens...</p>
                 ) : (
                     <div className="footer-tokens">
-                        <p>More coins:
+                        <p> More coins:
                         {tokens.map((token: any, index: number) => (
                             <span key={token.tokenAddress}>
                 <Link to={`/token/${token.tokenAddress}`}>
@@ -21,6 +21,7 @@ const Footer: React.FC<{ tokens: any[], loading: boolean }> = ({ tokens, loading
                         ))} </p>
                     </div>
                 )}
+                <pre>(v0)</pre>
             </div>
         </footer>
     );
