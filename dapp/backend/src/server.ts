@@ -11,6 +11,7 @@ import * as fs from "fs";
 import {promisify} from "util";
 import {getSymbolPrice} from "./price";
 const readFileAsync:any = promisify(fs.readFile);
+const writeFileAsync:any = promisify(fs.writeFile);
 
 const app = express();
 app.use(cors());
@@ -85,8 +86,24 @@ app.get('/api/price', async (req, res) => {
 
 
 app.get("/api/wearable-supply", async (req,res)=>{
-    const wearables = JSON.parse( await readFileAsync(DEPOSIT_LISTENER_WEARABLE_FILEPATH, "utf-8") as string);
-    return res.send({result:97-Object.keys(wearables).length})
+    try {
+        // Verificar si el archivo existe
+        try {
+            await fs.access(DEPOSIT_LISTENER_WEARABLE_FILEPATH, ()=>{});
+        } catch (error) {
+            // Si no existe, crearlo con contenido vacío "{}"
+            await writeFileAsync(DEPOSIT_LISTENER_WEARABLE_FILEPATH, '{}', 'utf-8');
+        }
+
+        // Leer el contenido del archivo
+        const wearables = JSON.parse( await readFileAsync(DEPOSIT_LISTENER_WEARABLE_FILEPATH, "utf-8") as string);
+
+        // Retornar el resultado
+        return res.send({ result: 97 - Object.keys(wearables).length });
+    } catch (err) {
+        console.error("Error al leer el archivo de wearables:", err);
+        return res.status(500).send({ error: "Error interno del servidor" });
+    }
 })
 
 const frontendDistPath = process.env.FRONTEND_DIST_PATH || path.join(__dirname, "../../../../../frontend/dist");
