@@ -11,4 +11,5 @@
 - infura (as rpc to deplopy contracts and other blockchain operations)
 - puppeteer (for page screenshot to embed on websites or metaverses)
 - caprover (for web publication and deployment)
+- Docker
 - referrer system with 2 levels

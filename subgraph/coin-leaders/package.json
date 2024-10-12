@@ -4,7 +4,7 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ base-coin-leaders",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ coin-leaders",
     "create-local": "graph create --node http://localhost:8020/ coin-leaders",
     "remove-local": "graph remove --node http://localhost:8020/ coin-leaders",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 coin-leaders",

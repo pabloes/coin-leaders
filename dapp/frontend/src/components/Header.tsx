@@ -67,7 +67,7 @@ const Header: React.FC = () => {
                         <img width={100} src="/highscore-logo.png" alt="Crown Logo" className="logo-img" />
                 </div>
                 <div className="title-container">
-                    <h1 className="logo-title">base-coin-leaders</h1>
+                    <h1 className="logo-title">coin-leaders</h1>
                     <p className="subtitle"><LineBreakComponent text={sub} /></p>
                 </div>
             </Link>

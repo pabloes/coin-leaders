@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 2,
+  "dockerfilePath": "./Dockerfile",
+  "captainServiceName": "coin-leaders",
+  "httpPort": 8080
+}

@@ -424,7 +424,7 @@ export async function initDepositListener(){
                 messages: [
                     { role: "system", content: "You are an assistant that creates engaging tweets. If you are given ENS name info, include it in the tweet," +
                             " Ignore referrer information, take token amount from parsedDepositAmount, not from any graphData depositAmount, " +
-                            "Include double breaklines, Include a link to https://base-coin-leaders.zeroxwork.com/token/[tokenAddress] " +
+                            "Include double breaklines, Include a link to https://coin-leaders.zeroxwork.com/token/[tokenAddress] " +
                             "Add emotion to the message, you can mention token name twitter, when adding token symbol tag prepend the $ symbol. " +
                             "In the eventInfo have link to twitter/x.com, just use the handle, for example, instead of adding https://x.com/handle, add @handle to the tweet."+
                             "The title from eventInfo is really important for the tweet, try to mention something related to it. Also is very important if provided the ENSUserName" +

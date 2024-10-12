@@ -1,7 +1,7 @@
 ## must have
-- [ ] Detectar cuando está en red incorrecta, debería cambiar a mainnet.
+- [ ] Detectar cuando está en red incorrecta, debería cambiar a base mainnet.
 - [ ] No usar 0x0000000000000000000000000000000000000000 , ni en la url, usar en todo caso "ETH", porque la gente se confunde
-- [ ] Dar wearable con depósito mayor 2 USD
+- [ ] Dar NFT con depósito mayor a 2 USD
 
 ## good additions
 - [ ] Add entry link click counter in small.
