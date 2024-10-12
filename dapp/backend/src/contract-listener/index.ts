@@ -139,6 +139,7 @@ export async function initDepositListener(){
 
 // Function to get the last block number from a file
     const getLastBlockNumberFromFile = (): number => {
+        console.log('File path:', DEPOSIT_LISTENER_LASTBLOCK_FILEPATH);
         if (fs.existsSync(DEPOSIT_LISTENER_LASTBLOCK_FILEPATH)) {
             const lastBlock = fs.readFileSync(DEPOSIT_LISTENER_LASTBLOCK_FILEPATH, 'utf-8');
             return parseInt(lastBlock, 10);
