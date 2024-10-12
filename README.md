@@ -1,0 +1,14 @@
+## features and tech stack:
+- web3 dApp : sass, typescript, wagmi, viem, connectkit
+- solidity contract
+- base network (as EVM blockchain with deployed contracts)
+- theGraph indexation (for fast blockchain queries)
+- openAI (to get AI generated tweet text and giphy keywords)
+- twitterAPI (to publish AI generated tweets)
+- giphy API (to attach a gif to each AI tweet)
+- hardhat (to develop the contracts with solidity)
+- basescan (to verify the contract)
+- infura (as rpc to deplopy contracts and other blockchain operations)
+- puppeteer (for page screenshot to embed on websites or metaverses)
+- caprover (for web publication and deployment)
+- referrer system with 2 levels

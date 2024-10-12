@@ -1,0 +1,235 @@
+
+.leaderboard-section {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #333333; /* Dark gray background for sections */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffcc00; /* Bright border for emphasis */
+  z-index: 1;
+}
+
+.leaderboard-section.left {
+}
+
+.leaderboard-section.center {
+  transform: scale(1.12); /* Slightly larger scale for the center leaderboard */
+}
+
+.leaderboard-section.right {
+  transform: scale(0.9); /* Slightly smaller scale for the right leaderboard */
+}
+
+.leaderboard-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5vw; /* Larger font size for title */
+  color: #ffcc00; /* Bright yellow for titles */
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase; /* All caps for a retro feel */
+
+  .add-button {
+    display: none;
+  }
+}
+
+.leaderboard-info {
+  font-size: 1rem; /* Larger font size for total amount and USD value */
+  color: #cccccc; /* Light gray for readability */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.leaderboard-total,
+.leaderboard-usd {
+  margin: 0; /* No additional margin */
+  font-size: 0.65rem;
+}
+
+.token-position {
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 0.8rem;
+  color: #ff6699; /* Pink for token position */
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+}
+
+.leaderboard-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #444444; /* Darker gray for entry background */
+  border: 1px solid #ff6699; /* Pink border for entries */
+  text-decoration: none;
+  color: inherit; /* Ensure text color is inherited */
+  transition: background-color 0.3s ease;
+  background-position: center;
+  background-size: cover;
+  &:hover {
+    background-color: #555555; /* Slightly lighter background on hover */
+  }
+}
+.entry-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensure full width clickable */
+}
+.leaderboard-entry-position {
+
+  font-size: 0.5rem;
+}
+/*.leaderboard-entry::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); !* Add a dark overlay *!
+  z-index: 1;
+}*/
+.leaderboard-entry * {
+  position: relative;
+  z-index: 2;
+}
+a.leaderboard-entry,
+.leaderboard-entry p {
+  text-shadow:
+          -2px -2px 1px #000,
+          2px -2px 1px #000,
+          -2px 2px 1px #000,
+          2px 2px 1px #000; /* Four-direction shadow to create a border effect */
+  padding-top:3px;
+  padding-left:3px;
+}
+a.leaderboard-entry,
+.leaderboard-entry p {
+  .entry-amount {
+    text-shadow:
+    -1px -1px 0px #000,
+    1px -1px 0px #000,
+    -1px 1px 0px #000,
+    1px 1px 0px #000; /* Four-direction shadow to create a border effect */
+  }
+}
+  /* Styles for top 3 entries */
+.leaderboard-entry.top-3 {
+  font-size: 1rem; /* Larger font for top 3 entries */
+  height: 5rem;
+  font-weight: normal; /* Less bold for top 3 entries */
+}
+
+/* Styles for entries beyond top 3 */
+.leaderboard-entry.other {
+  font-size: 0.8rem; /* Smaller font for other entries */
+  font-weight: lighter; /* Less bold for other entries */
+  height:2rem;
+}
+
+.leaderboard-entry:hover {
+  height:10rem;
+}
+
+.entry-title {
+  color: #00ffcc; /* Teal for entry titles */
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent line breaking in titles */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 2px 2px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.entry-amount {
+  color: #ffcc00; /* Yellow for amount */
+  font-size: 0.6rem;
+  position: absolute;
+  right: 0;
+  align-self: flex-start;
+  top: -9px
+}
+
+.leaderboard-footer {
+  margin-top: 20px; /* Space above the footer */
+  text-align: center; /* Center-align the footer content */
+}
+
+.show-more-link {
+  color: #ffcc00; /* Yellow for the link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.show-more-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Adjust layout for small screens */
+@media (max-width: 600px) {
+  .screenshot {
+    .leaderboard-wrapper {
+      max-width: 100%;
+    }
+
+    .leaderboards-container {
+      padding: 0;
+    }
+  }
+
+  .leaderboards-container {
+    display: flex;
+    flex-direction: column; /* Stack leaderboards vertically */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .leaderboard-wrapper {
+    flex: 1;
+    margin: 0 10px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+
+  .leaderboard-section {
+    padding: 10px; /* Reduce padding inside each section */
+    font-size: 0.8rem; /* Smaller font size */
+  }
+
+
+  .leaderboard-section.center {
+    transform: scale(1); /* Slightly larger scale for the center leaderboard */
+  }
+
+  .leaderboard-section.right {
+    transform: scale(1); /* Slightly smaller scale for the right leaderboard */
+  }
+
+  .leaderboard-title {
+    font-size: 0.9rem;
+  }
+
+  .leaderboard-info {
+    font-size: 0.65rem;
+  }
+
+  .leaderboard-entry.other {
+    font-size: 0.6rem;
+  }
+  .leaderboard-entry.top-3 {
+    font-size: 0.6rem;
+  }
+
+
+}

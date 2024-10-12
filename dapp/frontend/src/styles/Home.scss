@@ -1,0 +1,110 @@
+.home-page .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.explanation {
+  position: relative;
+  line-height: 1.2;
+}
+
+.leaderboards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #1a1a1a; /* Match the body background color */
+  flex-wrap: wrap; /* Allow items to wrap */
+
+
+  .leaderboard-wrapper {
+    flex: 1;
+    margin: 0 10px;
+    max-width: 33%; /* Ensuring the columns fit within the screen */
+    min-width: 300px; /* Minimum width to prevent breaking */
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+
+  .leaderboard-wrapper.left {
+    order: 1; /* Place it on the left */
+    padding-right: 30px;
+  }
+
+  .leaderboard-wrapper.center {
+    order: 2; /* Place it in the center */
+  }
+
+  .leaderboard-wrapper.right {
+    order: 3; /* Place it on the right */
+
+  }
+
+  .add-button {
+    border: 1px solid deeppink;
+    display: inline;
+    padding:2px;
+    font-size: 1rem;
+    color: deeppink;
+  }
+  .referrer-promo {
+    display: block;
+    padding: 10px;
+    background-color: #ffcc00;
+    margin-left: 20px;
+    color: #1a1a1a;
+    b {
+      color: deeppink;
+    }
+    img{
+      width: 100%;
+    }
+  }
+
+  .referrer-link {
+    color: #1a1a1a; // Dark text color for contrast
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .referrer-link:hover {
+    text-decoration: underline;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .leaderboards-container {
+    .leaderboard-wrapper.left {
+      order: 0; /* Place it on the left */
+    }
+
+    .leaderboard-wrapper.center {
+      order: 0; /* Place it in the center */
+    }
+
+    .leaderboard-wrapper.right {
+      order: 0; /* Place it on the right */
+
+    }
+
+    .leaderboard-wrapper {
+      max-width: 100%;
+      padding-left: 0;
+      flex: 1;
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box; /* Include padding and border in width */
+      margin-bottom: 8px;
+    }
+    .leaderboards-container {
+      padding: 0;
+      padding-top: 4px;
+      padding-right: 4px;
+    }
+    .leaderboard-wrapper.left {
+      padding-right:0;
+    }
+  }
+
+}

@@ -1,0 +1,70 @@
+type DepositEntity @entity {
+  id: ID!
+  user: User
+  token: TokenTotal!
+  amount: BigInt!
+  url: String
+  title: String
+  image: String
+  referrer: User
+  comm: User
+  referrerPercentage: Int!
+  commPercentage: Int!
+  receiver: User
+  transaction: String!
+  userTokenInfo: UserTokenInfo!
+}
+
+type TokenTotal @entity {
+  id: ID!
+  tokenAddress: Bytes!
+  totalDeposited: BigInt!
+  name: String!
+  symbol: String!
+  decimals: Int!
+  leaderboards: [TokenLeaderboard!]! @derivedFrom(field: "token")
+  referralEarnings: BigInt!
+  commEarnings: BigInt!
+  receiverEarnings: BigInt!
+  userTokenInfos: [UserTokenInfo!] @derivedFrom(field: "token")
+}
+
+type TokenLeaderboard @entity {
+  id: ID!
+  token: TokenTotal!
+  user: User!
+  depositedAmount: BigInt!
+  title: String
+  url: String
+  image: String
+}
+
+type User @entity {
+  id: ID! # This can be the user's address
+  userTokenInfos: [UserTokenInfo!] @derivedFrom(field: "user")
+}
+
+type UserTokenInfo @entity {
+  id: ID!
+  user: User
+  token: TokenTotal!
+  totalDeposited: BigInt!
+  deposits: [DepositEntity!]! @derivedFrom(field: "userTokenInfo")
+  referralEarnings: BigInt!
+  commEarnings: BigInt!
+  receiverEarnings: BigInt!
+  totalEarnings: BigInt!
+}
+
+type Config @entity {
+  id: ID!
+  referrerPercentage: Int
+  commPercentage: Int
+  receiver: User
+}
+
+type MetaEventEntity @entity {
+  id: ID!
+  key: BigInt!
+  value: String!
+}

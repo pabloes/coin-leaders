@@ -1,0 +1,28 @@
+// src/styles/_base.scss
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  background-color: $light-bg;
+  color: $text-dark;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $primary-gold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $text-dark;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em;
+}

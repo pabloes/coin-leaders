@@ -1,0 +1,20 @@
+.footer {
+  padding: 20px 0;
+  background-color: #1a1a1a; /* Dark background for footer */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left; /* Left text alignment */
+}
+
+.more-coins {
+  color: #cccccc; /* Light gray color for the text */
+  font-size: 0.9rem;
+  margin-top: 20px; /* Additional margin to move it further down */
+}

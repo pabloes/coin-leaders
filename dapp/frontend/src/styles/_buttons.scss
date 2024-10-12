@@ -1,0 +1,16 @@
+// src/styles/_buttons.scss
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 2px solid $primary-gold;
+  background-color: transparent;
+  color: $primary-gold;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: $primary-gold;
+    color: $text-light;
+  }
+}

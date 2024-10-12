@@ -1,0 +1,60 @@
+{
+  "topTokens": [
+    {
+      "name": "Token A",
+      "address": "0x1",
+      "totalAmount": 5000000,
+      "usdValue": 1500000
+    },
+    {
+      "name": "Token B",
+      "address": "0x2",
+      "totalAmount": 3000000,
+      "usdValue": 1200000
+    },
+    {
+      "name": "Token C",
+      "address": "0x3",
+      "totalAmount": 2000000,
+      "usdValue": 800000
+    }
+  ],
+  "leaderboards": {
+    "0x1": [
+      { "user": "User 1", "depositedAmount": 2000000, "title": "HODLer", "url": "#" },
+      { "user": "User 2", "depositedAmount": 1500000, "title": "Whale", "url": "#" },
+      { "user": "User 3", "depositedAmount": 1000000, "title": "CryptoPunk", "url": "#" },
+      { "user": "User 4", "depositedAmount": 800000, "title": "Blockchain Believer", "url": "#" },
+      { "user": "User 5", "depositedAmount": 500000, "title": "Decentralizer", "url": "#" },
+      { "user": "User 6", "depositedAmount": 300000, "title": "Anarchist", "url": "#" },
+      { "user": "User 7", "depositedAmount": 200000, "title": "Miner", "url": "#" },
+      { "user": "User 8", "depositedAmount": 100000, "title": "Satoshi's Apprentice", "url": "#" },
+      { "user": "User 9", "depositedAmount": 50000, "title": "Node Runner", "url": "#" },
+      { "user": "User 10", "depositedAmount": 25000, "title": "Ledger Keeper", "url": "#" }
+    ],
+    "0x2": [
+      { "user": "User 11", "depositedAmount": 1800000, "title": "DeFi Evangelist", "url": "#" },
+      { "user": "User 12", "depositedAmount": 1200000, "title": "Moon Seeker", "url": "#" },
+      { "user": "User 13", "depositedAmount": 900000, "title": "Smart Contract Coder", "url": "#" },
+      { "user": "User 14", "depositedAmount": 600000, "title": "Privacy Advocate", "url": "#" },
+      { "user": "User 15", "depositedAmount": 400000, "title": "Chain Linker", "url": "#" },
+      { "user": "User 16", "depositedAmount": 300000, "title": "DAO Builder", "url": "#" },
+      { "user": "User 17", "depositedAmount": 200000, "title": "Staker", "url": "#" },
+      { "user": "User 18", "depositedAmount": 100000, "title": "Lightning Rider", "url": "#" },
+      { "user": "User 19", "depositedAmount": 50000, "title": "Token Trader", "url": "#" },
+      { "user": "User 20", "depositedAmount": 25000, "title": "Airdrop Hunter", "url": "#" }
+    ],
+    "0x3": [
+      { "user": "User 21", "depositedAmount": 2500000, "title": "Key HODLer", "url": "#" },
+      { "user": "User 22", "depositedAmount": 1500000, "title": "Block Explorer", "url": "#" },
+      { "user": "User 23", "depositedAmount": 1000000, "title": "Crypto OG", "url": "#" },
+      { "user": "User 24", "depositedAmount": 800000, "title": "Whitepaper Scholar", "url": "#" },
+      { "user": "User 25", "depositedAmount": 600000, "title": "Cold Wallet Keeper", "url": "#" },
+      { "user": "User 26", "depositedAmount": 400000, "title": "Block Producer", "url": "#" },
+      { "user": "User 27", "depositedAmount": 300000, "title": "Digital Alchemist", "url": "#" },
+      { "user": "User 28", "depositedAmount": 200000, "title": "Token Economist", "url": "#" },
+      { "user": "User 29", "depositedAmount": 100000, "title": "Cypherpunk", "url": "#" },
+      { "user": "User 30", "depositedAmount": 50000, "title": "Chain Splitter", "url": "#" }
+    ]
+  }
+}

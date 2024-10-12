@@ -1,0 +1,40 @@
+// src/styles/ReferralLink.scss
+.referral-link-page {
+  color: #ffffff;
+  padding: 20px;
+  background-color: #1a1a1a;
+}
+
+.referral-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.generate-link-button,
+.copy-link-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffcc00; /* Bright yellow button */
+  border: none;
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.generate-link-button:hover,
+.copy-link-button:hover {
+  background-color: #ffd700; /* Slightly lighter yellow on hover */
+}
+
+.referral-link-textarea {
+  width: 100%;
+  height: 60px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid #ffcc00;
+  background-color: #333333; /* Darker background for the textarea */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  resize: none;
+}

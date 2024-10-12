@@ -1,0 +1,184 @@
+.token-page {
+  box-sizing: border-box;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1768px; /* Increased max width to accommodate both sections */
+}
+
+
+
+.deposit-section {
+  width: 50%;
+  padding: 20px;
+  margin-left: 20px;
+  background-color: #222; /* Slightly darker background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.deposit-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.deposit-section p {
+  margin-bottom: 20px;
+}
+
+.connect-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #222;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.connect-button:hover {
+  background-color: #ffc700;
+}
+form {
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #fff; // White color for contrast
+      font-size: 1.2rem; // Adjust size for pixelated look
+      text-transform: uppercase;
+      font-family: 'Press Start 2P', sans-serif; // Example pixelated font
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      font-family: 'Press Start 2P', sans-serif; // Example pixelated font
+      border: 2px solid #888;
+      background-color: #333;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #ffcc00; // Highlight color on focus
+      }
+    }
+  }
+
+  button {
+    width: calc(100% + 19px);
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    font-family: 'Press Start 2P', sans-serif; // Example pixelated font
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #ff6699; // Pink button color
+
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:disabled {
+      background-color: #888; // Disabled state color
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #ffcc00; // Hover color
+    }
+  }
+}
+.screenshot {
+  .deposit-section {
+    display:none;
+  }
+
+  @media (max-width: 600px) {
+    .deposit-section {
+      display:none;
+    }
+  }
+}
+.join-link{
+  display: none;
+}
+/* Adjust layout for small screens on the Token Page */
+@media (max-width: 600px) {
+
+  .token-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0; /* Padding for overall page */
+    .header {
+      padding: 8px 8px;
+      width: 100%;
+    }
+
+    .join-link {
+      display: block;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #ffcc00; /* Bright color for link */
+      cursor: pointer;
+      font-size: 1rem;
+      padding-top: 16px;
+      text-decoration: underline;
+    }
+
+    .leaderboard-wrapper,
+    .deposit-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    aside.deposit-section {
+      margin:2px 10px;
+      padding: 6px 0;
+      background-color: #333333; /* Same style as leaderboard section */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      border: 2px solid #ffcc00;
+      text-align: center;
+      width: calc(100% - 20px);
+
+      h3 {
+        font-size: 1.5rem; /* Adjust the font size */
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        max-width: 100%;
+
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        label, input, button {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 100%; /* Increased max width to accommodate both sections */
+      width:100%;
+    }
+
+  }
+}

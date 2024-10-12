@@ -1,0 +1,19 @@
+// src/styles/main.scss
+
+@import 'variables';
+@import 'base';
+@import 'header';
+@import 'Footer';
+@import 'buttons';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background-color: #1a1a1a; /* Dark background color */
+  color: #ffffff; /* White text for good contrast */
+  font-family: 'Press Start 2P', cursive; /* Pixelated, retro font */
+}
+h1 {
+  color:white;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

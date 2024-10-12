@@ -1,0 +1,119 @@
+// src/styles/Header.scss
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #333333; /* Dark background for header */
+  color: #ffffff; /* White text for contrast */
+  justify-content: space-between; /* Distribute items across the header */
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto; /* Pushes the rest of the items to the right */
+}
+
+.logo-title {
+  font-size: 1.8rem;
+  font-family: 'Press Start 2P', cursive; /* Pixelated, retro font */
+  color: #ffd700; /* Gold color for the title */
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-family: 'Press Start 2P', cursive; /* Pixelated, retro font */
+  color: #ffffff; /* White color for the subtitle */
+  margin: 0;
+  margin-top: 5px;
+  max-width: 700px;
+}
+
+.links {
+  display: flex;
+  flex-grow: 1; /* Allow links section to grow and fill space */
+  justify-content: center; /* Center the links within their flex container */
+  gap: 15px;
+}
+
+.links a {
+  color: #00ffcc; /* Teal color for links */
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Press Start 2P', cursive; /* Pixelated, retro font */
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
+
+/* Header styles for small screens */
+@media (max-width: 600px) {
+  .header {
+    height: 50px; /* Reduce header height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+  }
+  .logo-title {
+    font-size: 0.7rem;
+    font-family: 'Press Start 2P', cursive; /* Pixelated, retro font */
+    color: #ffd700; /* Gold color for the title */
+    margin: 0;
+  }
+  .subtitle {
+    display: none;
+    font-size: 0.6rem;
+  }
+  .logo-img {
+    width: 40px;
+    height: 40px; /* Smaller logo */
+    margin: 0;
+  }
+
+  .menu {
+    display: none; /* Hide menu initially */
+  }
+
+  .menu-toggle {
+    font-size: 2rem;
+    display: block; /* Show menu toggle button */
+  }
+  .screenshot .menu-toggle {
+    display: none;
+  }
+  .links {
+    display: none;
+  }
+}
+
+/* Styles for the mobile menu */
+.menu.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #333;
+  width: 100%;
+  z-index: 2;
+}
+
+.menu-item {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
