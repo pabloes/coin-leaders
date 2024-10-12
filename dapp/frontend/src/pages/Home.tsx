@@ -97,7 +97,7 @@ const Home: React.FC = () => {
                         <a href="https://x.com/coinbaseleaders" target="_blank" rel="noreferrer"><strong style={{color:"orange", fontSize:32}}>?</strong>
                        @coinbaseleaders</a> publishes <span style={{color:"deeppink"}}>AI</span> generated tweets about deposits on this web<br/><br/>
                         This is an experimental project with leaderboards per tokens where contributors rise based on their <span style={{color:"deeppink"}}>donations ♥︎</span>, displaying custom text, links, and images; then advertised in metaverses and events.
-                        Powered by <span style={{color:"turquoise"}}>#ChatGPT #theGraph #Solidity #TwitterSDK</span>
+                        Powered by <span style={{color:"turquoise"}}>#BASE #ChatGPT #theGraph #Solidity #TwitterSDK</span>
                     </div>
                     <br/><br/><br/>
                 </>}
