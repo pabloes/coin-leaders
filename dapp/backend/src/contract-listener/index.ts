@@ -209,19 +209,19 @@ export async function initDepositListener(){
                                 address: ERC1155_CONTRACT_ADDRESS as `0x${string}`,
                                 abi: erc1155abi,
                                 functionName: 'mint',
-                                args: [[address], [1], [1]],
+                                args: [[address], ["1"], ["1"]],
                                 account,
                                 chain:base
                             }
                             const { request } = await polygonPublicClient.simulateContract(data);
                             const txHash = await polygonWalletClient.writeContract(request);
                             console.log("wearable being sent with tx ",txHash);
-                            callDiscordHook(`  Wearable sent to ${graphData.ENSUserName || decodedLog?.args?.user}`);
+                            callDiscordHook(`  NFT sent to ${graphData.ENSUserName || decodedLog?.args?.user}`);
                         }else{
-                            console.log("wearable was already sent to ",args?.user)
+                            console.log("NFT was already sent to ",args?.user)
                         }
                     }else{
-                        console.log("deposit amount was ",graphData.amountInUSD)
+                        console.log("deposit amount was ",graphData?.amountInUSD)
                     }
                     fs.writeFileSync(DEPOSIT_LISTENER_WEARABLE_FILEPATH, JSON.stringify(givenWearablesData, null, "  "), "utf-8")
                     if(publication) callDiscordHook("https://x.com/chainHighscore/status/"+publication.data.id );
