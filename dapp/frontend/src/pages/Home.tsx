@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                     </main>
                     <br />
                     <br />
-                    <center style={{color:"lightgrey"}}>&nbsp;(These are the top 3 tokens with more accumulated USD value)</center>
+                    <center style={{color:"lightgrey"}}>&nbsp;(These are the top 3 coins with more accumulated USD value)</center>
                     <Footer tokens={allTokens?.tokenTotals?.filter(t => topTokenAddresses?.findIndex(i => i === t.tokenAddress) === -1) || []} loading={loading} />
                 </>}
         </div>
