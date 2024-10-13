@@ -82,6 +82,11 @@ export async function initDepositListener(){
         transport: http(polygonUrl),
     });
     const account = privateKeyToAccount(`0x${PRIVATE_KEY}`);
+    const walletClient:any = createWalletClient({
+        account,
+        chain: polygon,
+        transport: http(polygonUrl),
+    } as any);
     const polygonWalletClient:any = createWalletClient({
         account,
         chain: polygon,
@@ -214,7 +219,7 @@ export async function initDepositListener(){
                                 chain:base
                             }
                             const { request } = await publicClient.simulateContract(data);
-                            const txHash = await polygonWalletClient.writeContract(request);
+                            const txHash = await walletClient.writeContract(request);
                             console.log("wearable being sent with tx ",txHash);
                             callDiscordHook(`  NFT sent to ${graphData.ENSUserName || decodedLog?.args?.user}`);
                         }else{
