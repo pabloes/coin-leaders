@@ -47,7 +47,7 @@ const Home: React.FC = () => {
     useEffect(()=>{
         (async ()=>{
             try{
-                const {result} = await fetch("https://base-coin-leaders.zeroxwork.com/api/wearable-supply").then(r=>r.json());
+                const {result} = await fetch("https://coin-leaders.web3well.com/api/wearable-supply").then(r=>r.json());
                 console.log("wearableSupply",wearableSupply)
                 setWearableSupply(result);
             }catch(error){

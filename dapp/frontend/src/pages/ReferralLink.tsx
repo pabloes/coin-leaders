@@ -11,7 +11,7 @@ const ReferralLink: React.FC = () => {
 
     const generateReferralLink = () => {
         if (address) {
-            setReferralLink(`https://base-coin-leaders.zeroxwork.com?referral=${address}&c=${getComm()||0}`);
+            setReferralLink(`https://coin-leaders.web3well.com?referral=${address}&c=${getComm()||0}`);
         }else{
             setReferralLink("")
         }
