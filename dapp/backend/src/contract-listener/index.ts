@@ -194,12 +194,11 @@ export async function initDepositListener(){
                     const graphData = await processEvent({decodedLog, log});
                     const eventInfo = JSON.parse(stringifyBigInt(decodedLog));
 
-                  /*  const publication = await postTweet(await generateTweet({
+                    const publication = await postTweet(await generateTweet({
                         eventInfo,
                         graphData,
                         log:JSON.parse(stringifyBigInt(log))
-                    }));*/
-                    const publication = false;
+                    }));
                     let givenWearablesData = {};
                     if (fs.existsSync(DEPOSIT_LISTENER_WEARABLE_FILEPATH)) {
                         givenWearablesData = JSON.parse(fs.readFileSync(DEPOSIT_LISTENER_WEARABLE_FILEPATH, "utf-8"));
@@ -232,7 +231,7 @@ export async function initDepositListener(){
                         console.log("deposit amount was ",graphData?.amountInUSD)
                     }
                     fs.writeFileSync(DEPOSIT_LISTENER_WEARABLE_FILEPATH, JSON.stringify(givenWearablesData, null, "  "), "utf-8")
-                   // if(publication) callDiscordHook("https://x.com/chainHighscore/status/"+publication.data.id );
+                    if(publication) callDiscordHook("https://x.com/chainHighscore/status/"+publication.data.id );
                     console.log("publication:",!!publication)
                 }
 
