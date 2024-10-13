@@ -7,6 +7,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
 contract MyERC1155Token is Initializable, ERC1155Upgradeable, OwnableUpgradeable {
     mapping(uint256 => string) private tokenURIs;
+    string private _contractURI;
 
     function initialize() public initializer {
         __ERC1155_init("");
@@ -35,5 +36,15 @@ contract MyERC1155Token is Initializable, ERC1155Upgradeable, OwnableUpgradeable
     // Sobrescribir la función uri para devolver un URI específico según el tokenId
     function uri(uint256 tokenId) public view override returns (string memory) {
         return tokenURIs[tokenId];
+    }
+
+    // Nueva función: contractURI
+    function contractURI() public view returns (string memory) {
+        return _contractURI;
+    }
+
+    // Nueva función: permite actualizar la contractURI
+    function setContractURI(string memory newContractURI) public onlyOwner {
+        _contractURI = newContractURI;
     }
 }
