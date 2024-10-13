@@ -213,7 +213,7 @@ export async function initDepositListener(){
                                 account,
                                 chain:base
                             }
-                            const { request } = await polygonPublicClient.simulateContract(data);
+                            const { request } = await publicClient.simulateContract(data);
                             const txHash = await polygonWalletClient.writeContract(request);
                             console.log("wearable being sent with tx ",txHash);
                             callDiscordHook(`  NFT sent to ${graphData.ENSUserName || decodedLog?.args?.user}`);
