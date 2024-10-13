@@ -72,7 +72,8 @@ const Header: React.FC = () => {
                 </div>
             </Link>
             <div className="links">
-            {/*    <a href="https://x.com/chainHighscore" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://x.com/chainHighscore" target="_blank" rel="noopener noreferrer">Twitter</a>
+            {/*
                 <Link to="/faqs">FAQs</Link>
                 <Link to="/roadmap">Roadmap</Link>*/}
                 <Link to="/referrer">Earn</Link>
