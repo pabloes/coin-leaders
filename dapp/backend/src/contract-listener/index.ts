@@ -85,7 +85,7 @@ export async function initDepositListener(){
     const walletClient:any = createWalletClient({
         account,
         chain: base,
-        transport: http(polygonUrl),
+        transport: http(mainnetUrl),
     } as any);
     const polygonWalletClient:any = createWalletClient({
         account,
