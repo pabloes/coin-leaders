@@ -104,8 +104,8 @@ const Home: React.FC = () => {
                 {index === 2 && (
 
                         <div className="referrer-promo">
-                            <img src="/head_show.gif" />
-                            <br/><br/>To <b>get this #NFT wearable</b> make a <span style={{color:"deeppink"}}>donation ♥︎</span> on any coin leaderboard for a value greater than $3.00<br/>
+                            <img src="/coin-leader-nft.png" />
+                            <br/><br/>To <b>get this #NFT</b> make a <span style={{color:"deeppink"}}>donation ♥︎</span> on any coin leaderboard for a value greater than $3.00<br/>
                             <br/>
                             (LIMITED SUPPLY: {wearableSupply||0}/100)</div>
 

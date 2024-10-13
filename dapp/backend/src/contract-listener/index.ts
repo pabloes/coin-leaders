@@ -18,7 +18,8 @@ import * as fs from "fs";
 import { mnemonicToSeedSync } from 'bip39';
 import {mnemonicToAccount, privateKeyToAccount} from 'viem/accounts'
 import wearablesAbi from "./wearablesAbi.json";
-
+console.log("wearablesAbi",!!wearablesAbi)
+import erc1155abi from "./erc1155abi.json";
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
@@ -32,6 +33,10 @@ const DEPOSIT_LISTENER_LASTBLOCK_FILEPATH:string = process.env.DEPOSIT_LISTENER_
 const DEPOSIT_LISTENER_DEFAULT_MIN_BLOCK:string = process.env.DEPOSIT_LISTENER_DEFAULT_MIN_BLOCK as string;
 const DEPOSIT_LISTENER_WEARABLE_FILEPATH:string = process.env.DEPOSIT_LISTENER_WEARABLE_FILEPATH as string;
 const WEARABLE_CONTRACT_ADDRESS:string = process.env.WEARABLE_CONTRACT_ADDRESS as string;
+console.log("WEARABLE_CONTRACT_ADDRESS",WEARABLE_CONTRACT_ADDRESS);
+const ERC1155_CONTRACT_ADDRESS:string = "0xf9974d2f3988f237522cf587e020dc00f273aa60";
+console.log("ERC1155_CONTRACT_ADDRESS",ERC1155_CONTRACT_ADDRESS);
+
 const PRIVATE_KEY:string = process.env.PRIVATE_KEY as string;
 console.log("PRIVATE_KEY?.lenbth",PRIVATE_KEY?.length);
 if(!PRIVATE_KEY?.length) process.exit(1);
@@ -201,12 +206,12 @@ export async function initDepositListener(){
                             //TODO GIVE WEARABLE
                             //client.
                             const data = {
-                                address: WEARABLE_CONTRACT_ADDRESS as `0x${string}`,
-                                abi: wearablesAbi,
-                                functionName: 'issueTokens',
-                                args: [[address], ["0"]],
+                                address: ERC1155_CONTRACT_ADDRESS as `0x${string}`,
+                                abi: erc1155abi,
+                                functionName: 'mint',
+                                args: [[address], [1], [1]],
                                 account,
-                                chain:polygon
+                                chain:base
                             }
                             const { request } = await polygonPublicClient.simulateContract(data);
                             const txHash = await polygonWalletClient.writeContract(request);
