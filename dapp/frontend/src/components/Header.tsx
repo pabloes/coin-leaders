@@ -76,7 +76,7 @@ const Header: React.FC = () => {
             {/*
                 <Link to="/faqs">FAQs</Link>
                 <Link to="/roadmap">Roadmap</Link>*/}
-                <Link to="/referrer">Earn</Link>
+                {/*<Link to="/referrer">Earn</Link>*/}
            {/*     <Link to="/H1GH-token">$H1GH</Link>*/}
             </div>
             <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
