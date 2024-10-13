@@ -215,7 +215,7 @@ export async function initDepositListener(){
                                 address: ERC1155_CONTRACT_ADDRESS as `0x${string}`,
                                 abi: erc1155abi,
                                 functionName: 'mint',
-                                args: [[address], ["1"], ["1"]],
+                                args: [address, 1, 1],
                                 account,
                                 chain:base
                             }
