@@ -86,9 +86,9 @@ const Header: React.FC = () => {
                 <Link className="menu-item" to="https://x.com/chainHighscore">Twitter</Link>
               {/*  <Link className="menu-item" to="https://discord.gg/uFeNSHxh">Discord</Link>*/}
   {/*              <Link className="menu-item" to="/H1GH-token">$H1GH</Link>*/}
-                <Link className="menu-item" to="/faqs">FAQs</Link>
+{/*                <Link className="menu-item" to="/faqs">FAQs</Link>
                 <Link className="menu-item" to="/roadmap">Roadmap</Link>
-                <Link className="menu-item" to="/referrer">Earn</Link>
+                <Link className="menu-item" to="/referrer">Earn</Link>*/}
             </nav>
         </header>
     );
