@@ -235,7 +235,7 @@ console.log("tokenInfo",tokenInfo)
                                         {(tokenInfo) ?
                                             <>
                                                 <div className="form-group">
-                                                    <label htmlFor="amount">Amount to deposit: (${Number(formatUnits(BigInt(Number(parsedDepositAmount) * (price)), tokenInfo?.tokenDecimals||0)).toFixed(2)})</label>
+                                                    <label htmlFor="amount">Amount to deposit: (${Number(formatUnits(BigInt(Math.floor(Number(parsedDepositAmount) * (price))), tokenInfo?.tokenDecimals||0)).toFixed(2)})</label>
                                                     <input
                                                         onKeyDown={()=>setDirty(true)}
                                                         type="number"
