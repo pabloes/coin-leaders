@@ -25,7 +25,5 @@ https://opensea.io/assets/base/0xf9974d2f3988f237522cf587e020dc00f273aa60/1
 - hardhat (to develop the contracts with solidity)
 - basescan (to verify the contract)
 - infura (as rpc to deplopy contracts and other blockchain operations)
-- puppeteer (for page screenshot to embed on websites or metaverses)
-- caprover (for web publication and deployment)
 - Docker
 - referrer system with 2 levels
