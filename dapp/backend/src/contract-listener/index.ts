@@ -194,11 +194,12 @@ export async function initDepositListener(){
                     const graphData = await processEvent({decodedLog, log});
                     const eventInfo = JSON.parse(stringifyBigInt(decodedLog));
 
-                    const publication = await postTweet(await generateTweet({
+                  /*  const publication = await postTweet(await generateTweet({
                         eventInfo,
                         graphData,
                         log:JSON.parse(stringifyBigInt(log))
-                    }));
+                    }));*/
+                    const publication = false;
                     let givenWearablesData = {};
                     if (fs.existsSync(DEPOSIT_LISTENER_WEARABLE_FILEPATH)) {
                         givenWearablesData = JSON.parse(fs.readFileSync(DEPOSIT_LISTENER_WEARABLE_FILEPATH, "utf-8"));
@@ -218,7 +219,9 @@ export async function initDepositListener(){
                                 account,
                                 chain:base
                             }
+                            console.log("data", JSON.stringify(data));
                             const { request } = await publicClient.simulateContract(data);
+                            console.log("simulation done", !!request);
                             const txHash = await walletClient.writeContract(request);
                             console.log("wearable being sent with tx ",txHash);
                             callDiscordHook(`  NFT sent to ${graphData.ENSUserName || decodedLog?.args?.user}`);
