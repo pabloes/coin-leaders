@@ -84,7 +84,7 @@ export async function initDepositListener(){
     const account = privateKeyToAccount(`0x${PRIVATE_KEY}`);
     const walletClient:any = createWalletClient({
         account,
-        chain: polygon,
+        chain: base,
         transport: http(polygonUrl),
     } as any);
     const polygonWalletClient:any = createWalletClient({
